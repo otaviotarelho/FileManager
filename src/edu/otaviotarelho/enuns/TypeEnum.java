@@ -19,4 +19,19 @@ public enum TypeEnum {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+
+    public String getExtension() {
+        switch (codigo) {
+            case 1:
+                return ".txt";
+            case 2:
+                return ".docx";
+            case 3:
+                return ".xls";
+            case 4:
+                return ".exe";
+        }
+
+        return ".txt";
+    }
 }

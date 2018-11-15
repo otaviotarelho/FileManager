@@ -2,26 +2,27 @@ package edu.otaviotarelho.dto;
 
 import edu.otaviotarelho.enuns.TypeEnum;
 
+import java.io.Serializable;
+import java.nio.file.attribute.FileTime;
 import java.time.LocalDate;
 
-public class File {
+public class File implements Serializable {
 
     private int id;
     private String name;
     private TypeEnum type;
     private String pathOrigem;
-    private int start;
     private int byteSize;
     private int blockSize;
-    private LocalDate criationDate;
-    private LocalDate modifiedDate;
+    private FileTime criationDate;
+    private FileTime modifiedDate;
+    private boolean activated;
 
-    public File(int id, String name, TypeEnum type, String pathOrigem, int start, int byteSize, int blockSize, LocalDate criationDate, LocalDate modifiedDate) {
+    public File(int id, String name, TypeEnum type, String pathOrigem, int byteSize, int blockSize, FileTime criationDate, FileTime modifiedDate) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.pathOrigem = pathOrigem;
-        this.start = start;
         this.byteSize = byteSize;
         this.blockSize = blockSize;
         this.criationDate = criationDate;
@@ -64,15 +65,6 @@ public class File {
         return this;
     }
 
-    public int getStart() {
-        return start;
-    }
-
-    public File setStart(int start) {
-        this.start = start;
-        return this;
-    }
-
     public int getByteSize() {
         return byteSize;
     }
@@ -91,21 +83,30 @@ public class File {
         return this;
     }
 
-    public LocalDate getCriationDate() {
+    public FileTime getCriationDate() {
         return criationDate;
     }
 
-    public File setCriationDate(LocalDate criationDate) {
+    public File setCriationDate(FileTime criationDate) {
         this.criationDate = criationDate;
         return this;
     }
 
-    public LocalDate getModifiedDate() {
+    public FileTime getModifiedDate() {
         return modifiedDate;
     }
 
-    public File setModifiedDate(LocalDate modifiedDate) {
+    public File setModifiedDate(FileTime modifiedDate) {
         this.modifiedDate = modifiedDate;
+        return this;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public File setActivated(boolean activated) {
+        this.activated = activated;
         return this;
     }
 }

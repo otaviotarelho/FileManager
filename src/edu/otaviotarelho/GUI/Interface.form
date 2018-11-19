@@ -29,17 +29,17 @@
                   <Component id="jLabel1" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton5" pref="136" max="32767" attributes="0"/>
+                      <Component id="BtnExtract" pref="136" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" pref="79" max="32767" attributes="0"/>
+                      <Component id="BtnOpen" pref="79" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton6" pref="74" max="32767" attributes="0"/>
+                      <Component id="BtnSave" pref="74" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton7" pref="87" max="32767" attributes="0"/>
+                      <Component id="BtnAdd" pref="87" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton3" pref="119" max="32767" attributes="0"/>
+                      <Component id="BtnRemove" pref="119" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" pref="148" max="32767" attributes="0"/>
+                      <Component id="BtnDefragment" pref="148" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jProgressBar1" alignment="0" max="32767" attributes="0"/>
@@ -58,12 +58,12 @@
               <Component id="jProgressBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton2" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButton3" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButton5" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButton4" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButton6" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButton7" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnDefragment" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnRemove" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnExtract" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnOpen" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnSave" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnAdd" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -101,43 +101,55 @@
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="BtnDefragment">
       <Properties>
         <Property name="text" type="java.lang.String" value=" Defragment"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionDefragment"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="BtnRemove">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionRemove"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="BtnOpen">
       <Properties>
         <Property name="text" type="java.lang.String" value="Open"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionOpen"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="BtnExtract">
       <Properties>
         <Property name="text" type="java.lang.String" value="Extract"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionExtract"/>
       </Events>
     </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBar1">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="BtnSave">
       <Properties>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionSave"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
+    <Component class="javax.swing.JButton" name="BtnAdd">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActionAdd"/>
       </Events>
     </Component>
   </SubComponents>

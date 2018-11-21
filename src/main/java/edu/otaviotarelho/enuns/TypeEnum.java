@@ -6,7 +6,8 @@ public enum TypeEnum implements Serializable {
     TEXTO(1),
     WORLD(2),
     EXCEL(3),
-    EXECUTAVEL(4);
+    EXECUTAVEL(4),
+    OUTROS(5);
 
     private int codigo;
 
@@ -35,5 +36,22 @@ public enum TypeEnum implements Serializable {
         }
 
         return ".txt";
+    }
+
+    public static TypeEnum getExtensionFromFile(String extension) {
+        switch (extension) {
+            case "txt":
+                return TypeEnum.TEXTO;
+            case "docx":
+            case "doc":
+                return TypeEnum.WORLD;
+            case "xls":
+            case "xlsx":
+                return TypeEnum.EXCEL;
+            case "exe":
+                return TypeEnum.EXECUTAVEL;
+        }
+
+        return TypeEnum.OUTROS;
     }
 }

@@ -4,6 +4,7 @@ import edu.otaviotarelho.dto.File;
 import edu.otaviotarelho.dto.FileCompacted;
 import edu.otaviotarelho.dto.FileSuported;
 import edu.otaviotarelho.enuns.TypeEnum;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
 import javax.swing.*;
@@ -27,35 +28,93 @@ public class Management {
 
     public void addFile(Path path) throws IOException {
         if(fileCompacted == null){
-            fileCompacted = new FileCompacted();
-            fileCompacted.setFileSuported( new FileSuported());
-            fileCompacted.setListOfFileBytes(new HashMap<>());
-
-            InputStream file = new FileInputStream(path.toString());
-            byte[] bytes = IOUtils.toByteArray(file);
-            BasicFileAttributes metaData = Files.readAttributes(path, BasicFileAttributes.class);
-
-            int id = 1;
-
-            TypeEnum type = getType();
-
-            File fileCreated = new File(id, path.getFileName().toString(), type, path.toAbsolutePath().toString(),
-                    bytes.length, bytes.length,  metaData.creationTime().toString(), metaData.lastModifiedTime().toString());
-            fileCreated.setActivated(true);
-
-
-            List<File> list = new ArrayList<>();
-            list.add(fileCreated);
-            fileCompacted.getFileSuported().setListOfFilesHeaders(list);
-            fileCompacted.getListOfFileBytes().put(id, bytes);
+            addNewFileFromBlackFile(path);
+            return;
         }
-        else {
 
-        }
+        addNewFileFromExistingFile(path);
     }
 
-    private TypeEnum getType(){
-        return null;
+    private void addNewFileFromExistingFile(Path path) throws IOException {
+        InputStream file = new FileInputStream(path.toString());
+        byte[] bytes = IOUtils.toByteArray(file);
+        BasicFileAttributes metaData = Files.readAttributes(path, BasicFileAttributes.class);
+        TypeEnum type = getType(path.toAbsolutePath().toString());
+
+        int id = getBestId(bytes.length);
+
+        File fileCreated = null;
+
+        for(File fileS : fileCompacted.getFileSuported().getListOfFilesHeaders()){
+            if(fileS.getId() == id){
+                fileCreated = fileS;
+            }
+        }
+
+        if(fileCreated == null){
+            fileCreated = new File(id, path.getFileName().toString(), type, path.toAbsolutePath().toString(),
+                    bytes.length, bytes.length,  metaData.creationTime().toString(), metaData.lastModifiedTime().toString());
+        }
+        else{
+
+            fileCreated.setName(path.getFileName().toString());
+            fileCreated.setType(type);
+            fileCreated.setPathOrigem(path.toAbsolutePath().toString());
+            fileCreated.setByteSize(bytes.length);
+            fileCreated.setModifiedDate(metaData.creationTime().toString());
+            fileCreated.setCriationDate(metaData.lastModifiedTime().toString());
+        }
+
+        fileCreated.setActivated(true);
+        fileCompacted.getFileSuported().getListOfFilesHeaders().add(fileCreated);
+        fileCompacted.getListOfFileBytes().put(id, bytes);
+    }
+
+    private void addNewFileFromBlackFile(Path path) throws IOException {
+        fileCompacted = new FileCompacted();
+        fileCompacted.setFileSuported( new FileSuported());
+        fileCompacted.setListOfFileBytes(new HashMap<>());
+
+        InputStream file = new FileInputStream(path.toString());
+        byte[] bytes = IOUtils.toByteArray(file);
+        BasicFileAttributes metaData = Files.readAttributes(path, BasicFileAttributes.class);
+
+        int id = 1;
+
+        TypeEnum type = getType(path.toAbsolutePath().toString());
+
+        File fileCreated = new File(id, path.getFileName().toString(), type, path.toAbsolutePath().toString(),
+                bytes.length, bytes.length,  metaData.creationTime().toString(), metaData.lastModifiedTime().toString());
+        fileCreated.setActivated(true);
+
+
+        List<File> list = new ArrayList<>();
+        list.add(fileCreated);
+        fileCompacted.getFileSuported().setListOfFilesHeaders(list);
+        fileCompacted.getListOfFileBytes().put(id, bytes);
+    }
+
+    public int getBestId(int fileSize){
+        int bestId = 0;
+        int maxSize = 0;
+       for(File file : fileCompacted.getFileSuported().getListOfFilesHeaders()) {
+           if(!file.isActivated()){
+               if(fileSize <= file.getBlockSize() && (file.getBlockSize() - fileSize) < maxSize){
+                   maxSize = (file.getBlockSize() - fileSize);
+                   bestId = file.getId();
+               }
+           }
+       }
+
+       if(bestId == 0){
+           bestId = fileCompacted.getFileSuported().getListOfFilesHeaders().size() + 1;
+       }
+
+       return bestId;
+    }
+
+    private TypeEnum getType(String path){
+        return TypeEnum.getExtensionFromFile(FilenameUtils.getExtension(path));
     }
 
     public ListModel<String> listFiles() {

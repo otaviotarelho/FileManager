@@ -126,7 +126,9 @@ public class Management {
             }
             else {
                 for(File fileHeaders : fileCompacted.getFileSuported().getListOfFilesHeaders()){
-                    ((DefaultListModel<String>) listModel).addElement(fileHeaders.getName());
+                    if(fileHeaders.isActivated()){
+                        ((DefaultListModel<String>) listModel).addElement(fileHeaders.getName());
+                    }
                 }
             }
         }

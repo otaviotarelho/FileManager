@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67d44e2a-ee2c-47e7-8dc8-5a2b4f1e854b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/enuns/TypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/enuns/TypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/manager/Management.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/manager/Management.class" afterDir="false" />
-    </list>
+    <list default="true" id="67d44e2a-ee2c-47e7-8dc8-5a2b4f1e854b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="206" column="1" lean-forward="true" selection-start-line="206" selection-start-column="1" selection-end-line="206" selection-end-column="1" />
+            <state relative-caret-position="519">
+              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3974#3975#0" expanded="true" />
@@ -97,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -360,12 +354,12 @@
       <workItem from="1542587009928" duration="79000" />
       <workItem from="1542587116241" duration="792000" />
       <workItem from="1542739117174" duration="7487000" />
-      <workItem from="1542760603075" duration="3251000" />
+      <workItem from="1542760603075" duration="3466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22184000" />
+    <option name="totallyTimeSpent" value="22399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -500,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -520,13 +507,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="206" column="1" lean-forward="true" selection-start-line="206" selection-start-column="1" selection-end-line="206" selection-end-column="1" />
+        <state relative-caret-position="519">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3974#3975#0" expanded="true" />
             <element signature="e#4060#4061#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
         </state>
       </provider>
     </entry>

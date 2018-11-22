@@ -4,6 +4,7 @@ import edu.otaviotarelho.dto.File;
 import edu.otaviotarelho.dto.FileCompacted;
 import edu.otaviotarelho.dto.FileSuported;
 import edu.otaviotarelho.enuns.TypeEnum;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -61,6 +62,7 @@ public class Management {
             fileCreated.setType(type);
             fileCreated.setPathOrigem(path.toAbsolutePath().toString());
             fileCreated.setByteSize(bytes.length);
+            fileCreated.setBlockSize(bytes.length);
             fileCreated.setModifiedDate(metaData.creationTime().toString());
             fileCreated.setCriationDate(metaData.lastModifiedTime().toString());
         }
@@ -94,7 +96,7 @@ public class Management {
         fileCompacted.getListOfFileBytes().put(id, bytes);
     }
 
-    public int getBestId(int fileSize){
+    private int getBestId(int fileSize){
         int bestId = 0;
         int maxSize = 0;
        for(File file : fileCompacted.getFileSuported().getListOfFilesHeaders()) {
@@ -170,6 +172,17 @@ public class Management {
         obj.close();
     }
 
+    public void saveToOrigem(int idFile) throws IOException {
+        Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
+        while(iterator.hasNext()){
+            File file = iterator.next();
+            if(file.getId() == idFile){
+                byte[] fileByte = fileCompacted.getListOfFileBytes().get(idFile);
+                FileUtils.writeByteArrayToFile(new java.io.File(file.getPathOrigem() + file.getName()), fileByte);
+            }
+        }
+    }
+
     public void showFile(byte[] textFile, int end){
         byte[] text = Arrays.copyOf(textFile, end);
 
@@ -204,6 +217,14 @@ public class Management {
     }
 
     public void defrag(){
+        Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
 
+        while(iterator.hasNext()){
+            File file = iterator.next();
+            if(!file.isActivated()){
+                fileCompacted.getListOfFileBytes().remove(file.getId());
+                iterator.remove();
+            }
+        }
     }
 }

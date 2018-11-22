@@ -187,6 +187,7 @@ public class Interface extends javax.swing.JFrame {
         if(result == JFileChooser.APPROVE_OPTION){
             String fileName = JOptionPane.showInputDialog("Digite o nome do arquivo");
             try{
+                management.defrag();
                 management.saveFileInDisc(fileChooser.getSelectedFile().getAbsolutePath() + "/"+ fileName);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(getParent(), "Não foi possível salvar o arquivo: " + e.getMessage());

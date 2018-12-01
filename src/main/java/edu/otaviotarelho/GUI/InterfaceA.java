@@ -29,18 +29,18 @@ public class InterfaceA extends javax.swing.JFrame {
 
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        TbLista = new javax.swing.JTable();
+        BtnOpen = new javax.swing.JButton();
+        BtnSaveAs = new javax.swing.JButton();
+        BtnRemove = new javax.swing.JButton();
+        BtnExtract = new javax.swing.JButton();
+        BtnAdd = new javax.swing.JButton();
 
         jButton4.setText("Remove");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TbLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
                 {"2", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
@@ -51,45 +51,45 @@ public class InterfaceA extends javax.swing.JFrame {
                 "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date", "activated"
             }
         ));
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.addContainerListener(new java.awt.event.ContainerAdapter() {
+        TbLista.setColumnSelectionAllowed(true);
+        TbLista.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
-                jTable1ComponentAdded(evt);
+                TbListaComponentAdded(evt);
             }
         });
-        jTable1.addComponentListener(new java.awt.event.ComponentAdapter() {
+        TbLista.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentMoved(java.awt.event.ComponentEvent evt) {
-                jTable1ComponentMoved(evt);
+                TbListaComponentMoved(evt);
             }
             public void componentShown(java.awt.event.ComponentEvent evt) {
-                jTable1ComponentShown(evt);
+                TbListaComponentShown(evt);
             }
         });
-        jTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        TbLista.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTable1PropertyChange(evt);
+                TbListaPropertyChange(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(TbLista);
+        TbLista.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        jButton1.setText("Open");
+        BtnOpen.setText("Open");
 
-        jButton2.setText("Save As");
+        BtnSaveAs.setText("Save As");
 
-        jButton3.setText("Remove");
+        BtnRemove.setText("Remove");
 
-        jButton5.setText("Extract");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        BtnExtract.setText("Extract");
+        BtnExtract.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                BtnExtractActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Add");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        BtnAdd.setText("Add");
+        BtnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                BtnAddActionPerformed(evt);
             }
         });
 
@@ -103,15 +103,15 @@ public class InterfaceA extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnOpen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnSaveAs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addComponent(BtnExtract, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                .addComponent(BtnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                 .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
@@ -120,40 +120,40 @@ public class InterfaceA extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtnOpen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnSaveAs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnExtract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
+    private void TbListaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TbListaPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1PropertyChange
+    }//GEN-LAST:event_TbListaPropertyChange
 
-    private void jTable1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentShown
+    private void TbListaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_TbListaComponentShown
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1ComponentShown
+    }//GEN-LAST:event_TbListaComponentShown
 
-    private void jTable1ComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jTable1ComponentMoved
+    private void TbListaComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_TbListaComponentMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1ComponentMoved
+    }//GEN-LAST:event_TbListaComponentMoved
 
-    private void jTable1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTable1ComponentAdded
+    private void TbListaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_TbListaComponentAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1ComponentAdded
+    }//GEN-LAST:event_TbListaComponentAdded
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void BtnExtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExtractActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_BtnExtractActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed
 
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_BtnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,13 +191,13 @@ public class InterfaceA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton BtnAdd;
+    private javax.swing.JButton BtnExtract;
+    private javax.swing.JButton BtnOpen;
+    private javax.swing.JButton BtnRemove;
+    private javax.swing.JButton BtnSaveAs;
+    private javax.swing.JTable TbLista;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

@@ -57,6 +57,15 @@ public class InterfaceA extends javax.swing.JFrame {
                 TbListaComponentAdded(evt);
             }
         });
+        TbLista.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                TbListaAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         TbLista.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentMoved(java.awt.event.ComponentEvent evt) {
                 TbListaComponentMoved(evt);
@@ -74,10 +83,25 @@ public class InterfaceA extends javax.swing.JFrame {
         TbLista.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         BtnOpen.setText("Open");
+        BtnOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnOpenActionPerformed(evt);
+            }
+        });
 
         BtnSaveAs.setText("Save As");
+        BtnSaveAs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSaveAsActionPerformed(evt);
+            }
+        });
 
         BtnRemove.setText("Remove");
+        BtnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRemoveActionPerformed(evt);
+            }
+        });
 
         BtnExtract.setText("Extract");
         BtnExtract.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +178,22 @@ public class InterfaceA extends javax.swing.JFrame {
     private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed
 
     }//GEN-LAST:event_BtnAddActionPerformed
+
+    private void BtnOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOpenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnOpenActionPerformed
+
+    private void BtnSaveAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSaveAsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnSaveAsActionPerformed
+
+    private void BtnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRemoveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRemoveActionPerformed
+
+    private void TbListaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TbListaAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TbListaAncestorAdded
 
     /**
      * @param args the command line arguments

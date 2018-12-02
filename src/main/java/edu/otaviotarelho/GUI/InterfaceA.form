@@ -42,11 +42,13 @@
               <Component id="BtnSaveAs" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="BtnRemove" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="BtnExtract" pref="149" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="BtnAdd" pref="108" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Component id="BtnExtract" min="-2" pref="101" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BtnExtractSource" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BtnAdd" min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,8 +61,9 @@
                   <Component id="BtnOpen" alignment="3" max="32767" attributes="0"/>
                   <Component id="BtnSaveAs" alignment="3" max="32767" attributes="0"/>
                   <Component id="BtnRemove" alignment="3" max="32767" attributes="0"/>
-                  <Component id="BtnExtract" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnExtractSource" alignment="3" max="32767" attributes="0"/>
                   <Component id="BtnAdd" alignment="3" max="32767" attributes="0"/>
+                  <Component id="BtnExtract" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
@@ -125,12 +128,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRemoveActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnExtract">
+    <Component class="javax.swing.JButton" name="BtnExtractSource">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Extract"/>
+        <Property name="text" type="java.lang.String" value="Extract at source"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExtractActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExtractSourceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BtnAdd">
@@ -139,6 +142,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAddActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnExtract">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Extract"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnExtractActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

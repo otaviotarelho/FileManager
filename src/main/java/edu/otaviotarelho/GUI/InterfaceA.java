@@ -42,16 +42,23 @@ public class InterfaceA extends javax.swing.JFrame {
         BtnOpen = new javax.swing.JButton();
         BtnSaveAs = new javax.swing.JButton();
         BtnRemove = new javax.swing.JButton();
-        BtnExtract = new javax.swing.JButton();
+        BtnExtractSource = new javax.swing.JButton();
         BtnAdd = new javax.swing.JButton();
+        BtnExtract = new javax.swing.JButton();
+
         jButton4.setText("Remove");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TbLista.setModel(new javax.swing.table.DefaultTableModel(
-            null,
+            new Object [][] {
+                {"1", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
+                {"2", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
+                {"3", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
+                {"4", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"}
+            },
             new String [] {
-                "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date"
+                "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date", "activated"
             }
         ));
         TbLista.setColumnSelectionAllowed(true);
@@ -61,12 +68,12 @@ public class InterfaceA extends javax.swing.JFrame {
             }
         });
         TbLista.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 TbListaAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         TbLista.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -106,10 +113,10 @@ public class InterfaceA extends javax.swing.JFrame {
             }
         });
 
-        BtnExtract.setText("Extract");
-        BtnExtract.addActionListener(new java.awt.event.ActionListener() {
+        BtnExtractSource.setText("Extract at source");
+        BtnExtractSource.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnExtractActionPerformed(evt);
+                BtnExtractSourceActionPerformed(evt);
             }
         });
 
@@ -117,6 +124,13 @@ public class InterfaceA extends javax.swing.JFrame {
         BtnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAddActionPerformed(evt);
+            }
+        });
+
+        BtnExtract.setText("Extract");
+        BtnExtract.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnExtractActionPerformed(evt);
             }
         });
 
@@ -135,11 +149,13 @@ public class InterfaceA extends javax.swing.JFrame {
                 .addComponent(BtnSaveAs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addComponent(BtnExtract, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnExtract, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addComponent(BtnExtractSource)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                .addGap(59, 59, 59))
+                .addComponent(BtnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,8 +166,9 @@ public class InterfaceA extends javax.swing.JFrame {
                     .addComponent(BtnOpen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnSaveAs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnExtract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtnExtractSource, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnExtract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34))
         );
 
@@ -174,9 +191,9 @@ public class InterfaceA extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TbListaComponentAdded
 
-    private void BtnExtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExtractActionPerformed
+    private void BtnExtractSourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExtractSourceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnExtractActionPerformed
+    }//GEN-LAST:event_BtnExtractSourceActionPerformed
 
     private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed
         JFileChooser fileChooser = new JFileChooser();
@@ -247,6 +264,10 @@ public class InterfaceA extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TbListaAncestorAdded
 
+    private void BtnExtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExtractActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnExtractActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,6 +307,7 @@ public class InterfaceA extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAdd;
     private javax.swing.JButton BtnExtract;
+    private javax.swing.JButton BtnExtractSource;
     private javax.swing.JButton BtnOpen;
     private javax.swing.JButton BtnRemove;
     private javax.swing.JButton BtnSaveAs;

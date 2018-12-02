@@ -5,13 +5,22 @@
  */
 package edu.otaviotarelho.GUI;
 
+import edu.otaviotarelho.manager.Management;
+import edu.otaviotarelho.staticMessages.Error;
+
+import javax.swing.*;
+import java.io.File;
+import java.nio.file.Paths;
+
 /**
  *
  * @author papagaiored
  */
 public class InterfaceA extends javax.swing.JFrame {
 
-    /**
+    private static Management management;
+    private Object[][] listOfFIles;
+     /**
      * Creates new form InterfaceA
      */
     public InterfaceA() {
@@ -35,20 +44,14 @@ public class InterfaceA extends javax.swing.JFrame {
         BtnRemove = new javax.swing.JButton();
         BtnExtract = new javax.swing.JButton();
         BtnAdd = new javax.swing.JButton();
-
         jButton4.setText("Remove");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TbLista.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"1", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
-                {"2", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
-                {"3", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"},
-                {"4", "teste", ".DOC", "C://", "1024", "1024 mb", "11/29/2018", "11/29/2018", "yes"}
-            },
+            null,
             new String [] {
-                "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date", "activated"
+                "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date"
             }
         ));
         TbLista.setColumnSelectionAllowed(true);
@@ -176,19 +179,68 @@ public class InterfaceA extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnExtractActionPerformed
 
     private void BtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
 
+        int result = fileChooser.showOpenDialog(getParent());
+
+        if(result == JFileChooser.APPROVE_OPTION){
+            File file = fileChooser.getSelectedFile();
+            try{
+                management.addFile(Paths.get(file.getPath()));
+//                jList1.setModel(management.listFiles());
+//                jList1.updateUI();
+            } catch (Exception e){
+                JOptionPane.showMessageDialog(getParent(), Error.ADD_ERROR);
+            }
+        }
     }//GEN-LAST:event_BtnAddActionPerformed
 
     private void BtnOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOpenActionPerformed
-        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        fileChooser.setAcceptAllFileFilterUsed(false);
+
+        int result = fileChooser.showOpenDialog(getParent());
+
+        if(result == JFileChooser.APPROVE_OPTION){
+            try{
+                File file = fileChooser.getSelectedFile();
+                management.readFile(Paths.get(file.getPath()));
+//                jList1.setModel(management.listFiles());
+//                jList1.updateUI();
+            } catch (Exception e ){
+                JOptionPane.showMessageDialog(getParent(), Error.OPEN_ERROR);
+            }
+        }
     }//GEN-LAST:event_BtnOpenActionPerformed
 
     private void BtnSaveAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSaveAsActionPerformed
-        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        int result = fileChooser.showOpenDialog(getParent());
+
+        if(result == JFileChooser.APPROVE_OPTION){
+            String fileName = JOptionPane.showInputDialog("Digite o nome do arquivo");
+            try{
+                management.saveFileInDisc(fileChooser.getCurrentDirectory().toString() + "/"+ fileName);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(getParent(), "Não foi possível salvar o arquivo: " + e.getMessage());
+            }
+        }
     }//GEN-LAST:event_BtnSaveAsActionPerformed
 
     private void BtnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRemoveActionPerformed
-        // TODO add your handling code here:
+        int idOption = 0;
+        int id = 0;
+        int option = JOptionPane.showConfirmDialog(getParent(), "Deseja remover o arquivo?" , "Aviso", JOptionPane.YES_NO_OPTION);
+
+        if(option == JOptionPane.YES_OPTION){
+            management.removeFiles(id);
+        }
+
     }//GEN-LAST:event_BtnRemoveActionPerformed
 
     private void TbListaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TbListaAncestorAdded
@@ -221,6 +273,7 @@ public class InterfaceA extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(InterfaceA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        management = new Management();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

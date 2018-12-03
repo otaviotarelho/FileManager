@@ -8,7 +8,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
-import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +22,11 @@ import static java.util.Objects.requireNonNull;
 
 public class Management {
 
-    FileCompacted fileCompacted;
+    public FileCompacted fileCompacted;
+    private Object[] tableColumns = {
+        "id", "name", "type", "path Origem", "byteSize", "blockSize", "criation Date", "modified Date"
+    };
+    private Object[][] listOfFiles;
 
     public Management(){
 
@@ -119,21 +124,31 @@ public class Management {
         return TypeEnum.getExtensionFromFile(FilenameUtils.getExtension(path));
     }
 
-    public ListModel<String> listFiles() {
-        ListModel<String> listModel = new DefaultListModel<>();
+    public TableModel listFiles() {
+        TableModel listModel = new DefaultTableModel();
+        listOfFiles = null;
 
         if(fileCompacted != null) {
-            if(fileCompacted.getFileSuported().getListOfFilesHeaders().isEmpty()){
-                ((DefaultListModel<String>) listModel).addElement("Sem arquivos a serem exibidos.");
-            }
-            else {
+            if(!fileCompacted.getFileSuported().getListOfFilesHeaders().isEmpty()){
+                listOfFiles = new Object[fileCompacted.getFileSuported().getSizeOfActivatedFiles()][tableColumns.length];
+                int linha = 0;
                 for(File fileHeaders : fileCompacted.getFileSuported().getListOfFilesHeaders()){
                     if(fileHeaders.isActivated()){
-                        ((DefaultListModel<String>) listModel).addElement(fileHeaders.getName());
+                        listOfFiles[linha][0] = fileHeaders.getId();
+                        listOfFiles[linha][1] = fileHeaders.getName();
+                        listOfFiles[linha][2] = fileHeaders.getType();
+                        listOfFiles[linha][3] = fileHeaders.getPathOrigem();
+                        listOfFiles[linha][4] = fileHeaders.getByteSize();
+                        listOfFiles[linha][5] = fileHeaders.getBlockSize();
+                        listOfFiles[linha][6] = fileHeaders.getCriationDate();
+                        listOfFiles[linha][7] = fileHeaders.getModifiedDate();
+                        linha++;
                     }
                 }
             }
         }
+
+        ((DefaultTableModel) listModel).setDataVector(listOfFiles, tableColumns);
 
         return listModel;
     }
@@ -150,13 +165,16 @@ public class Management {
 
     public void removeFiles(int idFile){
         requireNonNull(fileCompacted.getFileSuported().getListOfFilesHeaders());
+        requireNonNull(listOfFiles);
 
         Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
+        int idArquivo = (int) listOfFiles[idFile][0];
 
         while(iterator.hasNext()){
             File fileIterated = iterator.next();
-            if(fileIterated.getId() == idFile){
+            if(fileIterated.getId() == idArquivo){
                 fileIterated.setActivated(false);
+                break;
             }
         }
     }
@@ -172,15 +190,22 @@ public class Management {
         obj.close();
     }
 
-    public void saveToOrigem(int idFile) throws IOException {
+    public String saveToOrigem(int idFile) throws IOException {
         Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
+        String fullpath = "";
+        int idArquivo = (int) listOfFiles[idFile][0];
+
         while(iterator.hasNext()){
             File file = iterator.next();
-            if(file.getId() == idFile){
-                byte[] fileByte = fileCompacted.getListOfFileBytes().get(idFile);
-                FileUtils.writeByteArrayToFile(new java.io.File(file.getPathOrigem() + file.getName()), fileByte);
+            if(file.getId() == idArquivo){
+                fullpath = file.getPathOrigem();
+                byte[] fileByte = fileCompacted.getListOfFileBytes().get(idArquivo);
+                FileUtils.writeByteArrayToFile(new java.io.File(fullpath), fileByte);
+                break;
             }
         }
+
+        return fullpath;
     }
 
     public void showFile(byte[] textFile, int end){
@@ -191,11 +216,15 @@ public class Management {
         System.out.print(output);
     }
 
-    public void extractFile(int idArquivo, String pastaDestino) throws IOException {
+    public void extractFile(int idFile, String pastaDestino) throws IOException {
+        requireNonNull(fileCompacted.getFileSuported().getListOfFilesHeaders());
+        requireNonNull(listOfFiles);
+
+        int idArquivo = (int) listOfFiles[idFile][0];
+
         if(fileCompacted.getListOfFileBytes().containsKey(idArquivo)){
             Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
             int size = 0;
-            TypeEnum extension = null;
             String name = null;
 
             while(iterator.hasNext()){
@@ -203,13 +232,12 @@ public class Management {
 
                 if(file.getId() == idArquivo){
                     size = file.getByteSize();
-                    extension = file.getType();
                     name = file.getName();
                 }
             }
 
             if(size != 0){
-                FileOutputStream fileOutputStream = new FileOutputStream(pastaDestino + name + extension.getExtension());
+                FileOutputStream fileOutputStream = new FileOutputStream(pastaDestino + "/" + name);
                 byte[] file = Arrays.copyOf(fileCompacted.getListOfFileBytes().get(idArquivo), size - 1);
                 fileOutputStream.write(file);
             }

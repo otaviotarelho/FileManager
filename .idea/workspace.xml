@@ -2,7 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67d44e2a-ee2c-47e7-8dc8-5a2b4f1e854b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/Interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/GUI/InterfaceA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/manager/Management.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/otaviotarelho/manager/Management.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -11,6 +38,14 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FileManager$InterfaceA.ic" NAME="InterfaceA Coverage Results" MODIFIED="1543796593034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.otaviotarelho.GUI.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="221" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="36953469">
@@ -43,7 +78,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="JAVA" value="29" />
+          <entry key="JAVA" value="33" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="2" />
         </counts>
@@ -56,7 +91,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7550" />
+          <entry key="JAVA" value="8829" />
           <entry key="XML" value="10" />
         </counts>
       </usages-collector>
@@ -68,11 +103,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="335">
+              <caret line="200" column="47" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,36 +116,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileCompacted.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="157" column="9" lean-forward="true" selection-start-line="143" selection-start-column="8" selection-end-line="157" selection-end-column="9" />
+            <state relative-caret-position="150">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#575#664#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="240" column="39" selection-start-line="240" selection-start-column="39" selection-end-line="240" selection-end-column="39" />
+            <state relative-caret-position="-2">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#668#757#0" expanded="true" />
+                <element signature="method#initComponents#0;class#InterfaceA#0" />
+                <element signature="e#3894#3895#0" expanded="true" />
+                <element signature="e#3953#3954#0" expanded="true" />
+                <element signature="e#4152#4153#0" expanded="true" />
+                <element signature="e#4213#4214#0" expanded="true" />
+                <element signature="e#4411#4412#0" expanded="true" />
+                <element signature="e#4472#4473#0" expanded="true" />
+                <element signature="e#4695#4696#0" expanded="true" />
+                <element signature="e#4763#4764#0" expanded="true" />
+                <element signature="e#4952#4953#0" expanded="true" />
+                <element signature="e#5010#5011#0" expanded="true" />
+                <element signature="e#5211#5212#0" expanded="true" />
+                <element signature="e#5273#5274#0" expanded="true" />
+                <element signature="e#14397#14398#0" expanded="true" />
+                <element signature="e#14462#14463#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-146">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -148,8 +187,9 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/File.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java" />
       </list>
     </option>
   </component>
@@ -250,6 +290,15 @@
             </path>
             <path>
               <item name="FileManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FileManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="otaviotarelho" type="462c0819:PsiDirectoryNode" />
+              <item name="staticMessages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -286,6 +335,30 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="apple" type="462c0819:PsiDirectoryNode" />
               <item name="laf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FileManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
+              <item name="table" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,7 +470,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26190000" />
+    <option name="totallyTimeSpent" value="31800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="955" extended-state="0" />
@@ -410,8 +483,8 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39976826" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32908458" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.22132097" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -419,7 +492,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32908458" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -466,9 +540,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java</url>
-          <line>55</line>
+          <line>167</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java</url>
+          <line>170</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java</url>
+          <line>187</line>
+          <properties />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -519,45 +611,10 @@
       <provider selected="true" editor-type-id="ui-designer" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileCompacted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="157" column="9" lean-forward="true" selection-start-line="143" selection-start-column="8" selection-end-line="157" selection-end-column="9" />
+        <state relative-caret-position="344">
+          <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#575#664#0" expanded="true" />
@@ -565,20 +622,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/javax/swing/table/DefaultTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/enuns/TypeEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
+        <state relative-caret-position="-22">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-193">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#937#938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileSuported.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding>
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/dto/FileCompacted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#297#298#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/GUI/InterfaceA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="240" column="39" selection-start-line="240" selection-start-column="39" selection-end-line="240" selection-end-column="39" />
+        <state relative-caret-position="-2">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#668#757#0" expanded="true" />
+            <element signature="method#initComponents#0;class#InterfaceA#0" />
+            <element signature="e#3894#3895#0" expanded="true" />
+            <element signature="e#3953#3954#0" expanded="true" />
+            <element signature="e#4152#4153#0" expanded="true" />
+            <element signature="e#4213#4214#0" expanded="true" />
+            <element signature="e#4411#4412#0" expanded="true" />
+            <element signature="e#4472#4473#0" expanded="true" />
+            <element signature="e#4695#4696#0" expanded="true" />
+            <element signature="e#4763#4764#0" expanded="true" />
+            <element signature="e#4952#4953#0" expanded="true" />
+            <element signature="e#5010#5011#0" expanded="true" />
+            <element signature="e#5211#5212#0" expanded="true" />
+            <element signature="e#5273#5274#0" expanded="true" />
+            <element signature="e#14397#14398#0" expanded="true" />
+            <element signature="e#14462#14463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/otaviotarelho/manager/Management.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="200" column="47" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

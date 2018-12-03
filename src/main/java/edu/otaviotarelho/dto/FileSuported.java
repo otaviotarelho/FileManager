@@ -2,6 +2,7 @@ package edu.otaviotarelho.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 
 public class FileSuported implements Serializable {
@@ -55,5 +56,19 @@ public class FileSuported implements Serializable {
     public FileSuported setListOfFilesHeaders(List<File> listOfFilesHeaders) {
         this.listOfFilesHeaders = listOfFilesHeaders;
         return this;
+    }
+
+    public int getSizeOfActivatedFiles(){
+        int i = 0;
+        Iterator<File> files = listOfFilesHeaders.iterator();
+
+        while (files.hasNext()){
+            File file = files.next();
+            if(file.isActivated()){
+                i++;
+            }
+        }
+
+        return i;
     }
 }

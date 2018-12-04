@@ -9,6 +9,9 @@ import edu.otaviotarelho.manager.Management;
 import edu.otaviotarelho.staticMessages.Error;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -49,11 +52,42 @@ public class InterfaceA extends javax.swing.JFrame {
             new String [] {
                 "id", "name", "type", "path origem", "size in bytes", "size of the original block", "criation date", "modified date"
             }
-        ));
+        )
+        {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        });
         TbLista.setColumnSelectionAllowed(false);
         TbLista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(TbLista);
-        TbLista.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TbLista.setCellSelectionEnabled(false);
+        TbLista.setRowSelectionAllowed(true);
+
+        TbLista.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                JTable table =(JTable) e.getSource();
+                Point point = e.getPoint();
+                int row = table.rowAtPoint(point);
+                if (e.getClickCount() == 2 && table.getSelectedRow() != -1) {
+                    try{
+                        String textFile = management.getSelectedFileToShow(row);
+
+                        if(textFile == null){
+                            return;
+                        }
+
+                        JOptionPane.showMessageDialog(getParent(), textFile, "Conteúdo Arquivo", JOptionPane.INFORMATION_MESSAGE);
+
+                    } catch (Exception ex){
+                        JOptionPane.showMessageDialog(getParent(), "Não foi possível abrir o arquivo");
+                    }
+
+                }
+            }
+        });
 
         BtnOpen.setText("Open");
         BtnOpen.addActionListener(new java.awt.event.ActionListener() {

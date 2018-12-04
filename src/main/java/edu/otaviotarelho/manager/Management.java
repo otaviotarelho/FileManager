@@ -125,7 +125,13 @@ public class Management {
     }
 
     public TableModel listFiles() {
-        TableModel listModel = new DefaultTableModel();
+        TableModel listModel = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
         listOfFiles = null;
 
         if(fileCompacted != null) {
@@ -208,12 +214,32 @@ public class Management {
         return fullpath;
     }
 
-    public void showFile(byte[] textFile, int end){
+
+    public String getSelectedFileToShow(int idFile){
+        requireNonNull(fileCompacted.getFileSuported().getListOfFilesHeaders());
+        requireNonNull(listOfFiles);
+
+        int idArquivo = (int) listOfFiles[idFile][0];
+
+        if(fileCompacted.getListOfFileBytes().containsKey(idArquivo)){
+            Iterator<File> iterator = fileCompacted.getFileSuported().getListOfFilesHeaders().iterator();
+            while(iterator.hasNext()){
+                File file = iterator.next();
+                if(file.getId() == idArquivo && file.getType() == TypeEnum.TEXTO){
+                    return showFile(fileCompacted.getListOfFileBytes().get(idArquivo), file.getByteSize());
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private String showFile(byte[] textFile, int end){
         byte[] text = Arrays.copyOf(textFile, end);
 
         String output = new String(text);
 
-        System.out.print(output);
+        return output;
     }
 
     public void extractFile(int idFile, String pastaDestino) throws IOException {

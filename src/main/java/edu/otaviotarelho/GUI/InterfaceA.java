@@ -226,16 +226,15 @@ public class InterfaceA extends javax.swing.JFrame {
 
     private void BtnSaveAsActionPerformed(java.awt.event.ActionEvent evt) {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-        int result = fileChooser.showOpenDialog(getParent());
+        int result = fileChooser.showSaveDialog(getParent());
 
         if(result == JFileChooser.APPROVE_OPTION){
             String fileName = JOptionPane.showInputDialog("Digite o nome do arquivo");
             try{
                 management.defrag();
-                management.saveFileInDisc(fileChooser.getCurrentDirectory().toString() + "/"+ fileName);
+                management.saveFileInDisc(fileChooser.getSelectedFile().toString() + "/"+ fileName);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(getParent(), "Não foi possível salvar o arquivo: " + e.getMessage());
             }
@@ -271,11 +270,11 @@ public class InterfaceA extends javax.swing.JFrame {
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-        int result = fileChooser.showOpenDialog(getParent());
+        int result = fileChooser.showSaveDialog(getParent());
 
         if(result == JFileChooser.APPROVE_OPTION){
             try{
-                management.extractFile(idOption, fileChooser.getCurrentDirectory().toString());
+                management.extractFile(idOption, fileChooser.getSelectedFile().toString());
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(getParent(), "Não foi possível salvar o arquivo: " + e.getMessage());
             }
